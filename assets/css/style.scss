@@ -1,3 +1,6 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
 html {
   box-sizing: border-box;
@@ -194,22 +197,16 @@ html {
 * Utilizar un bucle para crear los h de forma automática
 */
 h1 {
-  font-size: 36px;
+  font-size: $valorH1;
 }
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 20px;
-}
-h5 {
-  font-size: 18px;
-}
-h6 {
-  font-size: 16px;
+$contValorH: $valorH1 - 6;
+$contH: 2;
+@while $contH < 7 {
+  h#{$contH} {
+    font-size: $contValorH;
+  }
+  $contH: $contH + 1;
+  $contValorH: $contValorH - 6;
 }
 /*
 * DIW: FIN Parte 1. 
