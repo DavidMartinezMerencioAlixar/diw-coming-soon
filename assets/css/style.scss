@@ -197,18 +197,16 @@ html {
 * Utilizar un bucle para crear los h de forma automática
 */
 h1 {
-  font-size: $valorH1;
+  font-size: $fontSizeH1;
 }
-$contValorH: $valorH1 - 6;
-$contH: 2;
-@while $contH < 7 {
+$contFontSizeH: $fontSizeH1 - 6;
+@for $contH from 2 through 6 {
   h#{$contH} {
-    font-size: $contValorH;
+    font-size: $contFontSizeH;
   }
-  $contH: $contH + 1;
-  $contValorH: $contValorH - 6;
+  $contFontSizeH: $contFontSizeH - 6;
 }
-/*
+/*  
 * DIW: FIN Parte 1. 
 */
 .w3-serif {
@@ -255,52 +253,64 @@ a {
 * DIW: Parte 2: 
 * Usar anidamientos de la forma más optima posible
 */
-.w3-table,
-.w3-table-all {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  display: table;
-}
-.w3-table-all {
-  border: 1px solid #ccc;
-}
 
-.w3-bordered tr,
-.w3-table-all tr {
-  border-bottom: 1px solid #ddd;
-}
-.w3-striped tbody tr:nth-child(even) {
-  background-color: #f1f1f1;
-}
-.w3-table-all tr:nth-child(odd) {
-  background-color: #fff;
-}
-.w3-table-all tr:nth-child(even) {
-  background-color: #f1f1f1;
-}
-.w3-hoverable tbody tr:hover,
-.w3-ul.w3-hoverable li:hover {
-  background-color: #ccc;
-}
-.w3-centered tr th,
-.w3-centered tr td {
-  text-align: center;
-}
-.w3-table td,
-.w3-table th,
-.w3-table-all td,
-.w3-table-all th {
-  padding: 8px 8px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: top;
-}
-.w3-table th:first-child,
-.w3-table td:first-child,
-.w3-table-all th:first-child,
-.w3-table-all td:first-child {
-  padding-left: 16px;
+.w3 {
+  &-table, &-table-all {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+
+    td, th {
+      padding: 8px 8px;
+      display: table-cell;
+      text-align: left;
+      vertical-align: top;
+    }
+    th:first-child, td:first-child {
+      padding-left: 16px;
+    }
+  }
+
+  &-table-all {
+    border: 1px solid #ccc;
+    tr {
+      &:nth-child(odd) {
+        background-color: #fff;
+      }
+      &:nth-child(even) {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+
+  &-bordered, &-table-all {
+    tr {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  &-striped {
+    tbody {
+      tr:nth-child(even) {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+
+  &-hoverable {
+    tbody tr:hover, &-ul.w3-hoverable li:hover {
+      background-color: #ccc;
+    }
+  }
+
+  &-centered {
+    tr {
+      th, td {
+        text-align: center;
+      }
+    }
+  }
 }
 /*
 * DIW: DIW: FIN Parte 2. 
@@ -560,41 +570,17 @@ a {
 * Crear los siguientes h restando multiplicando por 2 cada uno.
 * Utilizar un bucle para crear los s1 de forma automática
 */
-.w3-col.s1 {
-  width: 8.33333%;
-}
-.w3-col.s2 {
-  width: 16.66666%;
-}
-.w3-col.s3 {
-  width: 24.99999%;
-}
-.w3-col.s4 {
-  width: 33.33333%;
-}
-.w3-col.s5 {
-  width: 41.66666%;
-}
-.w3-col.s6 {
-  width: 49.99999%;
-}
-.w3-col.s7 {
-  width: 58.33333%;
-}
-.w3-col.s8 {
-  width: 66.66666%;
-}
-.w3-col.s9 {
-  width: 74.99999%;
-}
-.w3-col.s10 {
-  width: 83.33333%;
-}
-.w3-col.s11 {
-  width: 91.66666%;
-}
-.w3-col.s12 {
-  width: 99.99999%;
+.w3-col {
+  &.s1 {
+    width: $anchoS1;
+  }
+  $contAnchoS: $anchoS1 * 2;
+  @for $contS from 2 through 12 {
+    &.s#{$contS} {
+      width: $contAnchoS;
+    }
+    $contAnchoS: $contAnchoS + $anchoS1;
+  }
 }
 /*
 * DIW: DIW: FIN Parte 3. 
@@ -606,84 +592,53 @@ a {
 *  
 */
 @media (min-width: 601px) {
-  .w3-col.m1 {
-    width: 8.33333%;
-  }
-  .w3-col.m2 {
-    width: 16.66666%;
-  }
-  .w3-col.m3,
-  .w3-quarter {
-    width: 24.99999%;
-  }
-  .w3-col.m4,
-  .w3-third {
-    width: 33.33333%;
-  }
-  .w3-col.m5 {
-    width: 41.66666%;
-  }
-  .w3-col.m6,
-  .w3-half {
-    width: 49.99999%;
-  }
-  .w3-col.m7 {
-    width: 58.33333%;
-  }
-  .w3-col.m8,
-  .w3-twothird {
-    width: 66.66666%;
-  }
-  .w3-col.m9,
-  .w3-threequarter {
-    width: 74.99999%;
-  }
-  .w3-col.m10 {
-    width: 83.33333%;
-  }
-  .w3-col.m11 {
-    width: 91.66666%;
-  }
-  .w3-col.m12 {
-    width: 99.99999%;
+  .w3-col {
+    &.m1 {
+      width: $anchoM1;
+    }
+    $contAnchoM: $anchoM1 * 2;
+    @for $contM from 2 through 12 {
+      @if $contM == 3 {
+        &.m#{$contM}, &-quarter {
+          width: $contAnchoM;
+        }
+      } @else if $contM == 4 {
+        &.m#{$contM}, &-third {
+          width: $contAnchoM;
+        }
+      } @else if $contM == 6 {
+        &.m#{$contM}, &-half {
+          width: $contAnchoM;
+        }
+      } @else if $contM == 8 {
+        &.m#{$contM}, &-twothird {
+          width: $contAnchoM;
+        }
+      } @else if $contM == 9 {
+        &.m#{$contM}, &-threequarter {
+          width: $contAnchoM;
+        }
+      } @else {
+        &.m#{$contM} {
+          width: $contAnchoM;
+        }
+      }
+      $contAnchoM: $contAnchoM + $anchoM1;
+    }
   }
 }
 @media (min-width: 993px) {
-  .w3-col.l1 {
-    width: 8.33333%;
-  }
-  .w3-col.l2 {
-    width: 16.66666%;
-  }
-  .w3-col.l3 {
-    width: 24.99999%;
-  }
-  .w3-col.l4 {
-    width: 33.33333%;
-  }
-  .w3-col.l5 {
-    width: 41.66666%;
-  }
-  .w3-col.l6 {
-    width: 49.99999%;
-  }
-  .w3-col.l7 {
-    width: 58.33333%;
-  }
-  .w3-col.l8 {
-    width: 66.66666%;
-  }
-  .w3-col.l9 {
-    width: 74.99999%;
-  }
-  .w3-col.l10 {
-    width: 83.33333%;
-  }
-  .w3-col.l11 {
-    width: 91.66666%;
-  }
-  .w3-col.l12 {
-    width: 99.99999%;
+  .w3.col {
+    &.l1 {
+      width: $anchoL1;
+    }
+    $contAnchoL: $anchoL1 * 2;
+    @for $contL from 2 through 12 {
+      &.s#{$contL} {
+        width: $contAnchoL;
+      }
+      $contAnchoL: $contAnchoL + $anchoL1;
+    }
   }
 }
 /*
@@ -734,7 +689,7 @@ a {
   display: inline-block !important;
 }
 /*
-* DIW: Parte 5: NO SE HACE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* DIW: Parte 5:
 * Extrae las propiedades comunes en todos los media y usa @media con la estructura del preprocesador
 */
 @media (max-width: 1205px) {
@@ -843,60 +798,40 @@ a {
 * Crea una clase que se llame .w3-display con position: absolute y con @extend crea una especialización de cada una de las siguientes
 * Utiliza un mixin para no repetir left:0 y top:0 en todos los display donde sea requerido.
 */
-.w3-display-topleft {
+.w3-display {
   position: absolute;
-  left: 0;
-  top: 0;
-}
-.w3-display-topright {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.w3-display-bottomleft {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-.w3-display-bottomright {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-.w3-display-middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-.w3-display-left {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(-0%, -50%);
-}
-.w3-display-right {
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(0%, -50%);
-}
-.w3-display-topmiddle {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-}
-.w3-display-bottommiddle {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
+  &-topleft, &-topright, &-bottomleft, &-bottomrigth {
+    @include arriba-izquierda();
+  }
+  &-middle {
+    top: 50%;
+    left: 50%;
+  }
+  &-left {
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(-0%, -50%);
+  }
+  &-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+  }
+  &-topmiddle {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+  }
+  &-bottommiddle {
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+  }
 }
 /*
 * DIW: Fin parte 6
@@ -991,8 +926,37 @@ a {
 * DIW: Parte 7: 
 * Utilizar anidamiento para el .w3-animate
 */
-.w3-animate-fading {
-  animation: fading 10s infinite;
+.w3-animate {
+  &-fading {
+    animation: fading 10s infinite;
+  }
+  &-opacity {
+    animation: opac 0.8s;
+  }
+  &-top, &-left, &-right, &-bottom {
+    position: relative;
+  }
+  &-top {
+    animation: animatetop 0.4s;
+  }
+  &-left {
+    animation: animateleft 0.4s;
+  }
+  &-right {
+    animation: animateright 0.4s;
+  }
+  &-bottom {
+    animation: animatebottom 0.4s;
+  }
+  &-zoom {
+    animation: animatezoom 0.6s;
+  }
+  &-input {
+    transition: width 0.4s ease-in-out;
+    &:focus {
+      width: 100% !important;
+    }
+  }
 }
 @keyframes fading {
   0% {
@@ -1005,9 +969,6 @@ a {
     opacity: 0;
   }
 }
-.w3-animate-opacity {
-  animation: opac 0.8s;
-}
 @keyframes opac {
   from {
     opacity: 0;
@@ -1015,10 +976,6 @@ a {
   to {
     opacity: 1;
   }
-}
-.w3-animate-top {
-  position: relative;
-  animation: animatetop 0.4s;
 }
 @keyframes animatetop {
   from {
@@ -1030,10 +987,6 @@ a {
     opacity: 1;
   }
 }
-.w3-animate-left {
-  position: relative;
-  animation: animateleft 0.4s;
-}
 @keyframes animateleft {
   from {
     left: -300px;
@@ -1043,10 +996,6 @@ a {
     left: 0;
     opacity: 1;
   }
-}
-.w3-animate-right {
-  position: relative;
-  animation: animateright 0.4s;
 }
 @keyframes animateright {
   from {
@@ -1058,10 +1007,6 @@ a {
     opacity: 1;
   }
 }
-.w3-animate-bottom {
-  position: relative;
-  animation: animatebottom 0.4s;
-}
 @keyframes animatebottom {
   from {
     bottom: -300px;
@@ -1072,9 +1017,6 @@ a {
     opacity: 1;
   }
 }
-.w3-animate-zoom {
-  animation: animatezoom 0.6s;
-}
 @keyframes animatezoom {
   from {
     transform: scale(0);
@@ -1082,12 +1024,6 @@ a {
   to {
     transform: scale(1);
   }
-}
-.w3-animate-input {
-  transition: width 0.4s ease-in-out;
-}
-.w3-animate-input:focus {
-  width: 100% !important;
 }
 /*
 * DIW: Fin de la Parte 7
