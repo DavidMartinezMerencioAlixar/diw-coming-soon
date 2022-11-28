@@ -1339,31 +1339,24 @@ a {
 .w3-tiny {
   font-size: 10px !important;
 }
-
 .w3-small {
   font-size: 12px !important;
 }
-
 .w3-medium {
   font-size: 15px !important;
 }
-
 .w3-large {
   font-size: 18px !important;
 }
-
 .w3-xlarge {
   font-size: 24px !important;
 }
-
 .w3-xxlarge {
   font-size: 36px !important;
 }
-
 .w3-xxxlarge {
   font-size: 48px !important;
 }
-
 .w3-jumbo {
   font-size: 64px !important;
 }
@@ -1399,35 +1392,27 @@ a {
 .w3-border {
   border: 1px solid #ccc !important;
 }
-
 .w3-border-top {
   border-top: 1px solid #ccc !important;
 }
-
 .w3-border-bottom {
   border-bottom: 1px solid #ccc !important;
 }
-
 .w3-border-left {
   border-left: 1px solid #ccc !important;
 }
-
 .w3-border-right {
   border-right: 1px solid #ccc !important;
 }
-
 .w3-topbar {
   border-top: 6px solid #ccc !important;
 }
-
 .w3-bottombar {
   border-bottom: 6px solid #ccc !important;
 }
-
 .w3-leftbar {
   border-left: 6px solid #ccc !important;
 }
-
 .w3-rightbar {
   border-right: 6px solid #ccc !important;
 }
@@ -1481,22 +1466,18 @@ a {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
-
 .w3-padding-24 {
   padding-top: 24px !important;
   padding-bottom: 24px !important;
 }
-
 .w3-padding-32 {
   padding-top: 32px !important;
   padding-bottom: 32px !important;
 }
-
 .w3-padding-48 {
   padding-top: 48px !important;
   padding-bottom: 48px !important;
 }
-
 .w3-padding-64 {
   padding-top: 64px !important;
   padding-bottom: 64px !important;
@@ -1511,18 +1492,19 @@ a {
 */
 .w3-padding-top-64 {
   padding-top: 64px !important;
+  padding-bottom: 64px !important;
 }
-
 .w3-padding-top-48 {
   padding-top: 48px !important;
+  padding-bottom: 48px !important;
 }
-
 .w3-padding-top-32 {
   padding-top: 32px !important;
+  padding-bottom: 32px !important;
 }
-
 .w3-padding-top-24 {
   padding-top: 24px !important;
+  padding-bottom: 24px !important;
 }
 
 /*

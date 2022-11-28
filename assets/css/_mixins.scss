@@ -2,3 +2,43 @@
     top: 0;
     left: 0;
 }
+@mixin border1px() {
+    $valorBorde: 1px solid #ccc !important;
+    &-border {
+        border: $valorBorde;
+        &-top {
+            border-top: $valorBorde;
+        }
+        &-bottom {
+            border-bottom: $valorBorde;
+        }
+        &-left {
+            border-left: $valorBorde;
+        }
+        &-right {
+            border-right: $valorBorde;
+        }
+    }
+}
+@mixin border6px() {
+    $valorBorde: 6px solid #ccc !important;
+    &-topbar {
+        border-top: $valorBorde;
+    }
+    &-bottombar {
+        border-bottom: $valorBorde;
+    }
+    &-leftbar {
+        border-left: $valorBorde;
+    }
+    &-rightbar {
+        border-right: $valorBorde;
+    }
+}
+@mixin valorPadding($valor) {
+    padding-top: $valor !important;
+    padding-bottom: $valor !important;
+}
+@mixin valorPaddingTop($valor) {
+    padding-top: $valor !important;
+}
