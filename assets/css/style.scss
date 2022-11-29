@@ -800,7 +800,7 @@ a {
 */
 .w3-display {
   position: absolute;
-  &-topleft, &-topright, &-bottomleft, &-bottomrigth {
+  &-topleft, &-topright, &-bottomleft, &-bottomright {
     @include arriba-izquierda();
   }
   &-middle {
