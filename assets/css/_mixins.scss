@@ -42,3 +42,13 @@
 @mixin valorPaddingTop($valor) {
     padding-top: $valor !important;
 }
+@mixin light-colors-fontColor($fontColor) {
+    &-amber, &-hover-amber:hover, &-aqua, &-hover-aqua:hover, &-light-blue, &-hover-light-blue:hover {
+        color: $fontColor !important;
+    }
+}
+@mixin dark-colors-fontColor($fontColor) {
+    &-blue, &-hover-blue:hover, &-brown, &-hover-brown:hover, &-green, &-hover-green:hover {
+        color: $fontColor !important;
+    }
+}
