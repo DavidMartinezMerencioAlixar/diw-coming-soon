@@ -952,7 +952,7 @@ a {
 .w3-display {
   position: absolute;
 }
-.w3-display-topleft, .w3-display-topright, .w3-display-bottomleft, .w3-display-bottomrigth {
+.w3-display-topleft, .w3-display-topright, .w3-display-bottomleft, .w3-display-bottomright {
   top: 0;
   left: 0;
 }
